@@ -14,8 +14,8 @@ public class Ej_RN7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Mayor e;
+        win7 w= new win7();
+        w.show(true);
     }
     
 }

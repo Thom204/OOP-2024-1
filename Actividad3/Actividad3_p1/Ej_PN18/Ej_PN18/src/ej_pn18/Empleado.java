@@ -15,7 +15,7 @@ public class Empleado {
 
     public String descripcion(){
         double sBruto = horasSemana*valorHora;
-        double sNeto = sBruto * (retencion/100);
+        double sNeto = sBruto- (sBruto * (retencion/100));
         return ("codigo: "+codigo+"\n nombres: "+nombre+"\n salario bruto: "+sBruto+"\n salario neto: "+sNeto);
     }
 }

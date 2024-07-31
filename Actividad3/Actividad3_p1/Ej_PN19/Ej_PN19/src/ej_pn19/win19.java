@@ -41,8 +41,7 @@ public class win19 extends javax.swing.JFrame {
         lblAltura = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jDialog1.setMinimumSize(new java.awt.Dimension(350, 200));
-        jDialog1.setPreferredSize(new java.awt.Dimension(300, 300));
+        jDialog1.setMinimumSize(new java.awt.Dimension(350, 170));
 
         jLabel4.setText("Error, revise los datos proporcionados no son correctos");
 
@@ -59,7 +58,7 @@ public class win19 extends javax.swing.JFrame {
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jDialog1Layout.createSequentialGroup()
                 .addGap(126, 126, 126)
@@ -73,7 +72,7 @@ public class win19 extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jLabel2.setText("jLabel2");
@@ -87,6 +86,12 @@ public class win19 extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido al Ejercicio Propuesto No.19");
 
         jLabel3.setText("Ingrese la longitud de lado de un triangulo equilatero:");
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
 
         btnArea.setText("Area");
         btnArea.addActionListener(new java.awt.event.ActionListener() {
@@ -176,24 +181,35 @@ public class win19 extends javax.swing.JFrame {
 
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
         Triangulo t;
+        double l;
         String s;
         try{
-           t= new Triangulo(Double.parseDouble(jTextField1.getText()));
-           s= Double.toString(t.perimetro());
-           if(s.length()>=7){lblPerimetro.setText(s.substring(0,7));}else{lblPerimetro.setText(s);}
+           l= Double.parseDouble(jTextField1.getText());
+           if (l<0){
+               throw new NumberFormatException();
+           }else{
+                t= new Triangulo(l);
+                s= Double.toString(t.perimetro());
+                if(s.length()>=7){lblPerimetro.setText(s.substring(0,7));}else{lblPerimetro.setText(s);}
+           }
         }catch(Exception err){
             jDialog1.show(true);
-            System.out.println(err);
         }
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
-        Triangulo t; 
+        Triangulo t;
+        double l;
         String s;
         try{
-           t= new Triangulo(Double.parseDouble(jTextField1.getText()));
-           s= Double.toString(t.area());
-           if(s.length()>=7){lblArea.setText(s.substring(0,7));}else{lblArea.setText(s);}
+           l= Double.parseDouble(jTextField1.getText());
+           if (l<0){
+               throw new NumberFormatException();
+           }else{
+                t= new Triangulo(l);
+                s= Double.toString(t.area());
+                if(s.length()>=7){lblArea.setText(s.substring(0,7));}else{lblArea.setText(s);}
+           }
         }catch(Exception err){
             jDialog1.show(true);
         }
@@ -204,16 +220,28 @@ public class win19 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlturaActionPerformed
-        Triangulo t; 
+        Triangulo t;
+        double l;
         String s;
         try{
-           t= new Triangulo(Double.parseDouble(jTextField1.getText()));
-           s= Double.toString(t.altura());
-           if(s.length()>=7){lblAltura.setText(s.substring(0,7));}else{lblAltura.setText(s);}
+           l= Double.parseDouble(jTextField1.getText());
+           if (l<0){
+               throw new NumberFormatException();
+           }else{
+                t= new Triangulo(l);
+                s= Double.toString(t.altura());
+                if(s.length()>=7){lblAltura.setText(s.substring(0,7));}else{lblAltura.setText(s);}
+           }
         }catch(Exception err){
             jDialog1.show(true);
         }
     }//GEN-LAST:event_btnAlturaActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        lblPerimetro.setText("");
+        lblArea.setText("");
+        lblAltura.setText("");
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments

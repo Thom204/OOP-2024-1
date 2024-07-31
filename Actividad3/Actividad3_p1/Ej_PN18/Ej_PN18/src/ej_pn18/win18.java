@@ -150,9 +150,16 @@ public class win18 extends javax.swing.JFrame {
         popup18 p;
         Empleado e;
         try {
-            e= new Empleado(ID.getText(), name.getText(), Double.parseDouble(horas.getText()), Double.parseDouble(valorHora.getText()), Double.parseDouble(retencion.getText()));
-            p= new popup18(e.descripcion());
-            p.show(true);
+            double h=Double.parseDouble(horas.getText());
+            double vH =Double.parseDouble(valorHora.getText());
+            double r= Double.parseDouble(retencion.getText());
+            if (h<0 || vH<0 || r<0 || r>100){
+                throw new NumberFormatException();
+            }else{
+                e= new Empleado(ID.getText(), name.getText(), h, vH, r);
+                p= new popup18(e.descripcion());
+                p.show(true);
+            }
         } catch(Exception err){
             p= new popup18("Error, asegurese de que todos los campos esten correctamente diligenciados");
             p.show(true);
