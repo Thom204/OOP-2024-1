@@ -35,7 +35,11 @@ public class NPowers {
     String getSqrN(){
         String res= "";
         for (double i: sqrN){
-            res+= String.valueOf(i).substring(0, 6);
+            if(String.valueOf(i).length()>7){
+                res+= String.valueOf(i).substring(0, 7);
+            }else{
+                res+= String.valueOf(i);
+            }
             res+= ", ";
         }
             
