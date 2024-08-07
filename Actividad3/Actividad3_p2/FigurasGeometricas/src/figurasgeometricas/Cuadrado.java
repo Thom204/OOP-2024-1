@@ -15,7 +15,7 @@ public class Cuadrado {
         return lado*lado;
     }
 
-    double calcularPerímetro() {
+    double calcularPerimetro() {
         return (4*lado);
     }
 }

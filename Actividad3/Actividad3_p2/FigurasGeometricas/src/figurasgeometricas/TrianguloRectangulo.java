@@ -26,15 +26,15 @@ public class TrianguloRectangulo {
         return Math.pow(base*base + altura*altura, 0.5);
     }
 
-    void determinarTipoTriangulo() {
+    String determinarTipoTriangulo() {
         if ((base == altura) && (base == calcularHipotenusa()) && (altura== calcularHipotenusa())) {
-            System.out.println("Es un triangulo equilatero");
+            return ("Es un triangulo equilatero");
         }
         else if ((base != altura) && (base != calcularHipotenusa()) &&(altura != calcularHipotenusa())) {
-            System.out.println("Es un triangulo escaleno");
+            return ("Es un triangulo escaleno");
         }
         else {
-            System.out.println("Es un triangulo isósceles");
+            return ("Es un triangulo isósceles");
         }
     }
 }
