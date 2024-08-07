@@ -170,12 +170,11 @@ public class winFig extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Options, javax.swing.GroupLayout.Alignment.LEADING, 0, 370, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(perimetro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(area, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(TipoTriangulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(hipotenusa, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(perimetro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(area, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TipoTriangulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(hipotenusa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(26, 26, 26)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(perimetroLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,18 +304,24 @@ public class winFig extends javax.swing.JFrame {
             param1.setText("");
             param2.setText("");
             if (sele =="Circulo"){
+                TipoTriangulo.setEnabled(false);
+                hipotenusa.setEnabled(false);
                 param2.setVisible(false);
                 perimetroLbl.setText("Perimetro del Circulo");
                 areaLbl.setText("Area del Circulo");
                 paramLbl.setText("Inserte el radio del Circulo:");
                 
             }else if(sele== "Rectangulo"){
+                TipoTriangulo.setEnabled(false);
+                hipotenusa.setEnabled(false);
                 perimetroLbl.setText("Perimetro del Rectangulo");
                 areaLbl.setText("Area del Rectangulo");
                 paramLbl.setText("Inserte base y altura:");
                 param2.setVisible(true);
                 
             }else if(sele=="Cuadrado"){
+                TipoTriangulo.setEnabled(false);
+                hipotenusa.setEnabled(false);
                 param2.setVisible(false);
                 perimetroLbl.setText("Perimetro del Cuadrado");
                 areaLbl.setText("Area del Cuadrado");
