@@ -27,10 +27,6 @@ public class winFig extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SinglePDialog = new javax.swing.JDialog();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        DualPDialog = new javax.swing.JDialog();
         ErrorDialog = new javax.swing.JDialog();
         errorLbl = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -51,47 +47,16 @@ public class winFig extends javax.swing.JFrame {
         hipotenusa.setEnabled(false);
         hipotenusaLbl = new javax.swing.JLabel();
 
-        jLabel6.setText("jLabel6");
-
-        jTextField1.setText("jTextField1");
-
-        javax.swing.GroupLayout SinglePDialogLayout = new javax.swing.GroupLayout(SinglePDialog.getContentPane());
-        SinglePDialog.getContentPane().setLayout(SinglePDialogLayout);
-        SinglePDialogLayout.setHorizontalGroup(
-            SinglePDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SinglePDialogLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(SinglePDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        SinglePDialogLayout.setVerticalGroup(
-            SinglePDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SinglePDialogLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout DualPDialogLayout = new javax.swing.GroupLayout(DualPDialog.getContentPane());
-        DualPDialog.getContentPane().setLayout(DualPDialogLayout);
-        DualPDialogLayout.setHorizontalGroup(
-            DualPDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        DualPDialogLayout.setVerticalGroup(
-            DualPDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
         ErrorDialog.setMinimumSize(new java.awt.Dimension(490, 110));
 
         errorLbl.setText("jLabel3");
 
         jButton1.setText("Ok");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ErrorDialogLayout = new javax.swing.GroupLayout(ErrorDialog.getContentPane());
         ErrorDialog.getContentPane().setLayout(ErrorDialogLayout);
@@ -411,6 +376,10 @@ public class winFig extends javax.swing.JFrame {
         tipoTLabel.setText("");
         hipotenusaLbl.setText("");
     }//GEN-LAST:event_param2KeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ErrorDialog.show(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -448,10 +417,8 @@ public class winFig extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog DualPDialog;
     private javax.swing.JDialog ErrorDialog;
     private javax.swing.JComboBox<String> Options;
-    private javax.swing.JDialog SinglePDialog;
     private javax.swing.JButton TipoTriangulo;
     private javax.swing.JButton area;
     private javax.swing.JLabel areaLbl;
@@ -461,8 +428,6 @@ public class winFig extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField param1;
     private javax.swing.JTextField param2;
     private javax.swing.JLabel paramLbl;
