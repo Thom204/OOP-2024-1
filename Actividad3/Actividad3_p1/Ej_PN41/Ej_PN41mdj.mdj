@@ -144,7 +144,7 @@
 											"top": 216,
 											"width": 167,
 											"height": 13,
-											"text": "+main(String[] args): void",
+											"text": "+main(args: String): void",
 											"horizontalAlignment": 0
 										}
 									],
@@ -730,8 +730,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGRKwXSW5peiuY="
 									},
-									"name": "String[] args",
-									"type": ""
+									"name": "args",
+									"type": "String"
 								},
 								{
 									"_type": "UMLParameter",
